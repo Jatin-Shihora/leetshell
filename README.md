@@ -18,7 +18,8 @@ Solve LeetCode problems without leaving your terminal.
 
 Browse problems, read descriptions, write code with syntax highlighting, test against sample cases, and submit - all from a single TUI.
 
-https://github.com/user-attachments/assets/REPLACE_WITH_UPLOADED_VIDEO_URL
+[https://github.com/Jatin-Shihora/leetshell/blob/main/media/leetshell_tutorial.mp4
+](https://github.com/Jatin-Shihora/leetshell/blob/main/media/leetshell_tutorial.mp4)
 
 ## Install
 
