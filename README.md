@@ -182,6 +182,10 @@ src/leetshell/
     submission_result.py  # Submission verdict display
 ```
 
+## Contributing
+
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a PR or raising an issue.
+
 ## License
 
 GPL-3.0 - see [LICENSE](LICENSE) for details.
