@@ -90,6 +90,22 @@ If your PR changes anything visual (layout, colors, new screens), include a scre
 
 - Use imperative mood: "Add filter", not "Added filter" or "Adds filter"
 - Keep the first line under 72 characters
+- Prefix with a type: `fix:`, `feat:`, `docs:`, `refactor:`, `test:`, `chore:`
+
+Good:
+```
+feat: add difficulty filter cycling with d key
+fix: prevent crash when cache directory is missing
+docs: fix typo in keybindings table
+refactor: extract description rendering into helper
+```
+
+Bad:
+```
+Update code
+Fixed stuff
+Refactor code for improved maintainability and readability
+```
 - Don't bump version numbers in PRs, maintainers handle releases
 
 ### What makes a PR easy to review
