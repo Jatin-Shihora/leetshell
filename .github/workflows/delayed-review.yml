@@ -1,0 +1,36 @@
+name: Delayed Reviewer Assignment
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  delayed-review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait 3 hours
+        run: sleep 10800
+
+      - name: Request review
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // Check PR is still open before assigning
+            const { data: pr } = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+            });
+            if (pr.state !== 'open') return;
+
+            // Don't assign review to the PR author
+            const author = context.payload.pull_request.user.login;
+            const reviewers = ['Jatin-Shihora'].filter(r => r !== author);
+            if (reviewers.length === 0) return;
+
+            await github.rest.pulls.requestReviewers({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+              reviewers,
+            });
